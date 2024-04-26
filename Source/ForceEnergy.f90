@@ -58,7 +58,7 @@ subroutine calc_acceleration(N, NB, x, y, z, vx, vy, vz, BOX, FF, l_bond, &
 			endif
 					
 			force_C = FF(typ(ub1(i)),typ(ub2(i))) * omega / r
-			energy = energy + FF(typ(ub1(i)),typ(ub2(i))) * r**2
+			energy = energy + 0.5*FF(typ(ub1(i)),typ(ub2(i)))*(1.0- r)**2
 			force_R = th * omega * ksi / sqrdt / r
 			force_D = - gm * omega * omega * (dx*dvx + dy*dvy + dz*dvz) / r / r	
 					

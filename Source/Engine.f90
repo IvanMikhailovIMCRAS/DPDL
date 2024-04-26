@@ -121,7 +121,7 @@ subroutine main(N, NB, BOX, x, y, z, vx, vy, vz, typ, b1, b2, bond_list, dt, FF,
 		! печатаем траекторию каждые num_track шагов
 		if(modulo(step,num_track).eq.0) then 
 			call print_track(N, x, y, z, typ, step, BOX)	
-			write(33, *) step, energy/N**2
+			write(33, *) step, energy
 		endif			
 	enddo
 	close(33)
