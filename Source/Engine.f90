@@ -71,7 +71,7 @@ subroutine main(N, NB, BOX, x, y, z, vx, vy, vz, typ, b1, b2, bond_list, dt, FF,
 	do step = 1, num_step
 		BOX(1) = box_x + delta_box * step
 		BOX(2) = box_y + delta_box * step
-		BOX(3) = box_volume / box_x / box_y
+		BOX(3) = box_volume / BOX(1) / BOX(2)
 		! рассчитываем новые координаты x(t+dt) = x(t) + v(t)*dt + 0.5*a(t)*dt^2
 		x(:) = x(:) + vx(:)*dt + 0.5*ax(:)*dt**2
 		y(:) = y(:) + vy(:)*dt + 0.5*ay(:)*dt**2
